@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_38571a6026618f45f463af3367fed4d8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_38571a6026618f45f463af3367fed4d8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_38571a6026618f45f463af3367fed4d8 = L.map(
+                "map_38571a6026618f45f463af3367fed4d8",
+                {
+                    center: [35.819437, 127.106375],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 6.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_88763bbf295ca2f9c8010fbc2247717c = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_88763bbf295ca2f9c8010fbc2247717c.addTo(map_38571a6026618f45f463af3367fed4d8);
+        
+    
+            var marker_0cf200ff1c10532b78e532660153f610 = L.marker(
+                [37.8800729197963, 127.727907820318],
+                {}
+            ).addTo(map_38571a6026618f45f463af3367fed4d8);
+        
+    
+            var icon_87d55a6ffacc54f5d8a999f3df3f4a80 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_0cf200ff1c10532b78e532660153f610.setIcon(icon_87d55a6ffacc54f5d8a999f3df3f4a80);
+        
+    
+        var popup_fad1187de9a9b2f0f05f13cf3f729cbb = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_1b10553d1e65d1d7e538a493581cddc6 = $(`<div id="html_1b10553d1e65d1d7e538a493581cddc6" style="width: 100.0%; height: 100.0%;">         <div style="max-width: 150px; font-size: 10px;">             <strong>강원</strong><br>             사고: 6425건<br>             사망: 139명<br>             부상: 10160명         </div>         </div>`)[0];
+                popup_fad1187de9a9b2f0f05f13cf3f729cbb.setContent(html_1b10553d1e65d1d7e538a493581cddc6);
+            
+        
+
+        marker_0cf200ff1c10532b78e532660153f610.bindPopup(popup_fad1187de9a9b2f0f05f13cf3f729cbb)
+        ;
+
+        
+    
+    
+            var marker_a274a9e06460cb661686d86b167c1bf2 = L.marker(
+                [37.2892851628003, 127.053543271],
+                {}
+            ).addTo(map_38571a6026618f45f463af3367fed4d8);
+        
+    
+            var icon_65451d6410782036a232a6dff107d0d5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a274a9e06460cb661686d86b167c1bf2.setIcon(icon_65451d6410782036a232a6dff107d0d5);
+        
+    
+        var popup_1b14b298a620ef8f7c594aa29c4b0562 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_908040a07baf6cb04257a744a7508832 = $(`<div id="html_908040a07baf6cb04257a744a7508832" style="width: 100.0%; height: 100.0%;">         <div style="max-width: 150px; font-size: 10px;">             <strong>경기</strong><br>             사고: 52968건<br>             사망: 547명<br>             부상: 77377명         </div>         </div>`)[0];
+                popup_1b14b298a620ef8f7c594aa29c4b0562.setContent(html_908040a07baf6cb04257a744a7508832);
+            
+        
+
+        marker_a274a9e06460cb661686d86b167c1bf2.bindPopup(popup_1b14b298a620ef8f7c594aa29c4b0562)
+        ;
+
+        
+    
+    
+            var marker_801d972481d0a3f25e46700b8c64cf00 = L.marker(
+                [35.2378032514675, 128.691940442146],
+                {}
+            ).addTo(map_38571a6026618f45f463af3367fed4d8);
+        
+    
+            var icon_1b361a5d2773f31d32b30dcc6564a25c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_801d972481d0a3f25e46700b8c64cf00.setIcon(icon_1b361a5d2773f31d32b30dcc6564a25c);
+        
+    
+        var popup_4b5903794621d90717b70997f8fda5fd = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_9c9c8325ca9dcb793e126a1bfcff41e1 = $(`<div id="html_9c9c8325ca9dcb793e126a1bfcff41e1" style="width: 100.0%; height: 100.0%;">         <div style="max-width: 150px; font-size: 10px;">             <strong>경남</strong><br>             사고: 10611건<br>             사망: 258명<br>             부상: 14545명         </div>         </div>`)[0];
+                popup_4b5903794621d90717b70997f8fda5fd.setContent(html_9c9c8325ca9dcb793e126a1bfcff41e1);
+            
+        
+
+        marker_801d972481d0a3f25e46700b8c64cf00.bindPopup(popup_4b5903794621d90717b70997f8fda5fd)
+        ;
+
+        
+    
+    
+            var marker_e474cbd55ef98f0de714afb21bee146b = L.marker(
+                [36.5761205474728, 128.505722686385],
+                {}
+            ).addTo(map_38571a6026618f45f463af3367fed4d8);
+        
+    
+            var icon_ce1d9e3bf20616366727b662c112d1aa = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e474cbd55ef98f0de714afb21bee146b.setIcon(icon_ce1d9e3bf20616366727b662c112d1aa);
+        
+    
+        var popup_c5f93f287f5cd3bb98bdd9b9c0497c5a = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_2b4b7e9ca9761277a3e4626b45c31bee = $(`<div id="html_2b4b7e9ca9761277a3e4626b45c31bee" style="width: 100.0%; height: 100.0%;">         <div style="max-width: 150px; font-size: 10px;">             <strong>경북</strong><br>             사고: 11037건<br>             사망: 309명<br>             부상: 16189명         </div>         </div>`)[0];
+                popup_c5f93f287f5cd3bb98bdd9b9c0497c5a.setContent(html_2b4b7e9ca9761277a3e4626b45c31bee);
+            
+        
+
+        marker_e474cbd55ef98f0de714afb21bee146b.bindPopup(popup_c5f93f287f5cd3bb98bdd9b9c0497c5a)
+        ;
+
+        
+    
+    
+            var marker_5115ee17e702192853a237922ca47a47 = L.marker(
+                [35.1600994105234, 126.851461925213],
+                {}
+            ).addTo(map_38571a6026618f45f463af3367fed4d8);
+        
+    
+            var icon_dd3f4c2a0d2195bb9abd1c50691c9f8c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5115ee17e702192853a237922ca47a47.setIcon(icon_dd3f4c2a0d2195bb9abd1c50691c9f8c);
+        
+    
+        var popup_0bbf47bd9ff749f34abe5e404b082a3b = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_d0c9812be25a9ac1a599c075887a0e9a = $(`<div id="html_d0c9812be25a9ac1a599c075887a0e9a" style="width: 100.0%; height: 100.0%;">         <div style="max-width: 150px; font-size: 10px;">             <strong>광주</strong><br>             사고: 7122건<br>             사망: 58명<br>             부상: 10722명         </div>         </div>`)[0];
+                popup_0bbf47bd9ff749f34abe5e404b082a3b.setContent(html_d0c9812be25a9ac1a599c075887a0e9a);
+            
+        
+
+        marker_5115ee17e702192853a237922ca47a47.bindPopup(popup_0bbf47bd9ff749f34abe5e404b082a3b)
+        ;
+
+        
+    
+    
+            var marker_4f850f5e31a37c5d38326f8414fe9817 = L.marker(
+                [35.8715665189534, 128.601258980014],
+                {}
+            ).addTo(map_38571a6026618f45f463af3367fed4d8);
+        
+    
+            var icon_c920e2e55235624ca69267f3a02290ea = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_4f850f5e31a37c5d38326f8414fe9817.setIcon(icon_c920e2e55235624ca69267f3a02290ea);
+        
+    
+        var popup_06579af2ac1e4497ff9dedac6ecea4bd = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_2221f67e39d9127b34b8703835d53e39 = $(`<div id="html_2221f67e39d9127b34b8703835d53e39" style="width: 100.0%; height: 100.0%;">         <div style="max-width: 150px; font-size: 10px;">             <strong>대구</strong><br>             사고: 11102건<br>             사망: 68명<br>             부상: 15721명         </div>         </div>`)[0];
+                popup_06579af2ac1e4497ff9dedac6ecea4bd.setContent(html_2221f67e39d9127b34b8703835d53e39);
+            
+        
+
+        marker_4f850f5e31a37c5d38326f8414fe9817.bindPopup(popup_06579af2ac1e4497ff9dedac6ecea4bd)
+        ;
+
+        
+    
+    
+            var marker_287ae8546fa8624fb0e1667c09193a7c = L.marker(
+                [36.3503849976553, 127.384633005948],
+                {}
+            ).addTo(map_38571a6026618f45f463af3367fed4d8);
+        
+    
+            var icon_0c6113f04af4a51ec4eddf0f911fee5e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_287ae8546fa8624fb0e1667c09193a7c.setIcon(icon_0c6113f04af4a51ec4eddf0f911fee5e);
+        
+    
+        var popup_b535b02bebce9354b3ebf24b48d32470 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_e8e09868d03bd0fced0353abdfc793fb = $(`<div id="html_e8e09868d03bd0fced0353abdfc793fb" style="width: 100.0%; height: 100.0%;">         <div style="max-width: 150px; font-size: 10px;">             <strong>대전</strong><br>             사고: 6841건<br>             사망: 51명<br>             부상: 9850명         </div>         </div>`)[0];
+                popup_b535b02bebce9354b3ebf24b48d32470.setContent(html_e8e09868d03bd0fced0353abdfc793fb);
+            
+        
+
+        marker_287ae8546fa8624fb0e1667c09193a7c.bindPopup(popup_b535b02bebce9354b3ebf24b48d32470)
+        ;
+
+        
+    
+    
+            var marker_20dcf89d3a0854542b43b367046154a9 = L.marker(
+                [35.17992598569, 129.07509523457],
+                {}
+            ).addTo(map_38571a6026618f45f463af3367fed4d8);
+        
+    
+            var icon_ec6c7c39b553065e186ae7939e99c49a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_20dcf89d3a0854542b43b367046154a9.setIcon(icon_ec6c7c39b553065e186ae7939e99c49a);
+        
+    
+        var popup_547c7a7f1a205bbebae7f81de081fb2e = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_68ba75cbb579712eff0675745743a0ad = $(`<div id="html_68ba75cbb579712eff0675745743a0ad" style="width: 100.0%; height: 100.0%;">         <div style="max-width: 150px; font-size: 10px;">             <strong>부산</strong><br>             사고: 10882건<br>             사망: 113명<br>             부상: 14829명         </div>         </div>`)[0];
+                popup_547c7a7f1a205bbebae7f81de081fb2e.setContent(html_68ba75cbb579712eff0675745743a0ad);
+            
+        
+
+        marker_20dcf89d3a0854542b43b367046154a9.bindPopup(popup_547c7a7f1a205bbebae7f81de081fb2e)
+        ;
+
+        
+    
+    
+            var marker_bae721eeedbd86f223eb3a05a0f13335 = L.marker(
+                [37.5663174209601, 126.977829174031],
+                {}
+            ).addTo(map_38571a6026618f45f463af3367fed4d8);
+        
+    
+            var icon_7a5569417c1a818f728a629f971583ae = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_bae721eeedbd86f223eb3a05a0f13335.setIcon(icon_7a5569417c1a818f728a629f971583ae);
+        
+    
+        var popup_592373fdbe1ca8bb4d265dcee427268a = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_ed6a85a03858113b783d201074d6e1e8 = $(`<div id="html_ed6a85a03858113b783d201074d6e1e8" style="width: 100.0%; height: 100.0%;">         <div style="max-width: 150px; font-size: 10px;">             <strong>서울</strong><br>             사고: 33698건<br>             사망: 221명<br>             부상: 45329명         </div>         </div>`)[0];
+                popup_592373fdbe1ca8bb4d265dcee427268a.setContent(html_ed6a85a03858113b783d201074d6e1e8);
+            
+        
+
+        marker_bae721eeedbd86f223eb3a05a0f13335.bindPopup(popup_592373fdbe1ca8bb4d265dcee427268a)
+        ;
+
+        
+    
+    
+            var marker_0217bfa5d0594d67bae54a59dad51fa2 = L.marker(
+                [36.4800579897497, 127.289039408864],
+                {}
+            ).addTo(map_38571a6026618f45f463af3367fed4d8);
+        
+    
+            var icon_500811fddb34f1fe8773bb38c67cbe9f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_0217bfa5d0594d67bae54a59dad51fa2.setIcon(icon_500811fddb34f1fe8773bb38c67cbe9f);
+        
+    
+        var popup_b6b80dfbec25cc6cabb64d17f4d5923c = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_30acda79120206b0a7b10f193de7dae7 = $(`<div id="html_30acda79120206b0a7b10f193de7dae7" style="width: 100.0%; height: 100.0%;">         <div style="max-width: 150px; font-size: 10px;">             <strong>세종</strong><br>             사고: 932건<br>             사망: 17명<br>             부상: 1330명         </div>         </div>`)[0];
+                popup_b6b80dfbec25cc6cabb64d17f4d5923c.setContent(html_30acda79120206b0a7b10f193de7dae7);
+            
+        
+
+        marker_0217bfa5d0594d67bae54a59dad51fa2.bindPopup(popup_b6b80dfbec25cc6cabb64d17f4d5923c)
+        ;
+
+        
+    
+    
+            var marker_141f201cc1e697823e4b14eca4f7bf6e = L.marker(
+                [35.5379472830778, 129.311256608093],
+                {}
+            ).addTo(map_38571a6026618f45f463af3367fed4d8);
+        
+    
+            var icon_f7847d461d8926341f779c2102cdbf3e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_141f201cc1e697823e4b14eca4f7bf6e.setIcon(icon_f7847d461d8926341f779c2102cdbf3e);
+        
+    
+        var popup_500436ce10bbcfee2f9938936ea8e9b9 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_d77105907262877a292a3e250734f02e = $(`<div id="html_d77105907262877a292a3e250734f02e" style="width: 100.0%; height: 100.0%;">         <div style="max-width: 150px; font-size: 10px;">             <strong>울산</strong><br>             사고: 3660건<br>             사망: 32명<br>             부상: 5177명         </div>         </div>`)[0];
+                popup_500436ce10bbcfee2f9938936ea8e9b9.setContent(html_d77105907262877a292a3e250734f02e);
+            
+        
+
+        marker_141f201cc1e697823e4b14eca4f7bf6e.bindPopup(popup_500436ce10bbcfee2f9938936ea8e9b9)
+        ;
+
+        
+    
+    
+            var marker_7b49e76f7ca5c22f8df7188f82b22236 = L.marker(
+                [37.4560499608337, 126.705255744089],
+                {}
+            ).addTo(map_38571a6026618f45f463af3367fed4d8);
+        
+    
+            var icon_6c05b8b1b04a821553fe3e72e6384824 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7b49e76f7ca5c22f8df7188f82b22236.setIcon(icon_6c05b8b1b04a821553fe3e72e6384824);
+        
+    
+        var popup_6b0b5f2f8a3f7e128432fd6574681e6d = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_f6191d07625031996a2ef25306b5ee9a = $(`<div id="html_f6191d07625031996a2ef25306b5ee9a" style="width: 100.0%; height: 100.0%;">         <div style="max-width: 150px; font-size: 10px;">             <strong>인천</strong><br>             사고: 7695건<br>             사망: 95명<br>             부상: 10533명         </div>         </div>`)[0];
+                popup_6b0b5f2f8a3f7e128432fd6574681e6d.setContent(html_f6191d07625031996a2ef25306b5ee9a);
+            
+        
+
+        marker_7b49e76f7ca5c22f8df7188f82b22236.bindPopup(popup_6b0b5f2f8a3f7e128432fd6574681e6d)
+        ;
+
+        
+    
+    
+            var marker_be102b60e761f3ef93b908123fd3e776 = L.marker(
+                [34.8174988528003, 126.465423854957],
+                {}
+            ).addTo(map_38571a6026618f45f463af3367fed4d8);
+        
+    
+            var icon_1385ecd335c3772ed98aefa99d7a25d8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_be102b60e761f3ef93b908123fd3e776.setIcon(icon_1385ecd335c3772ed98aefa99d7a25d8);
+        
+    
+        var popup_89998f086b68392134b95cb2f0dc263b = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_a034210260db0325946f63e4b303941e = $(`<div id="html_a034210260db0325946f63e4b303941e" style="width: 100.0%; height: 100.0%;">         <div style="max-width: 150px; font-size: 10px;">             <strong>전남</strong><br>             사고: 8335건<br>             사망: 201명<br>             부상: 12611명         </div>         </div>`)[0];
+                popup_89998f086b68392134b95cb2f0dc263b.setContent(html_a034210260db0325946f63e4b303941e);
+            
+        
+
+        marker_be102b60e761f3ef93b908123fd3e776.bindPopup(popup_89998f086b68392134b95cb2f0dc263b)
+        ;
+
+        
+    
+    
+            var marker_ad60db06def058519056e61c64b1e72f = L.marker(
+                [35.8194374902358, 127.106374667247],
+                {}
+            ).addTo(map_38571a6026618f45f463af3367fed4d8);
+        
+    
+            var icon_17ddc8b8fdaadd8ec4625b110c594774 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_ad60db06def058519056e61c64b1e72f.setIcon(icon_17ddc8b8fdaadd8ec4625b110c594774);
+        
+    
+        var popup_ae85af5c035e0167de8589affe5e666c = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_415e4c4cb5a3e9b150cef153d1c2df54 = $(`<div id="html_415e4c4cb5a3e9b150cef153d1c2df54" style="width: 100.0%; height: 100.0%;">         <div style="max-width: 150px; font-size: 10px;">             <strong>전북</strong><br>             사고: 5681건<br>             사망: 194명<br>             부상: 8091명         </div>         </div>`)[0];
+                popup_ae85af5c035e0167de8589affe5e666c.setContent(html_415e4c4cb5a3e9b150cef153d1c2df54);
+            
+        
+
+        marker_ad60db06def058519056e61c64b1e72f.bindPopup(popup_ae85af5c035e0167de8589affe5e666c)
+        ;
+
+        
+    
+    
+            var marker_dbd0f07fe978b35e83b4e620e91f4356 = L.marker(
+                [33.4882207234688, 126.497722598412],
+                {}
+            ).addTo(map_38571a6026618f45f463af3367fed4d8);
+        
+    
+            var icon_4a8195f72ac53af5d2c1529ad0814726 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_dbd0f07fe978b35e83b4e620e91f4356.setIcon(icon_4a8195f72ac53af5d2c1529ad0814726);
+        
+    
+        var popup_55f25f538008f170e93825794784d0d8 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_67342e513f8484f2f3277d4bf239a3da = $(`<div id="html_67342e513f8484f2f3277d4bf239a3da" style="width: 100.0%; height: 100.0%;">         <div style="max-width: 150px; font-size: 10px;">             <strong>제주</strong><br>             사고: 4039건<br>             사망: 53명<br>             부상: 6021명         </div>         </div>`)[0];
+                popup_55f25f538008f170e93825794784d0d8.setContent(html_67342e513f8484f2f3277d4bf239a3da);
+            
+        
+
+        marker_dbd0f07fe978b35e83b4e620e91f4356.bindPopup(popup_55f25f538008f170e93825794784d0d8)
+        ;
+
+        
+    
+    
+            var marker_74aa6e26e6e5cb82ed6550d0273b7ab1 = L.marker(
+                [36.6590666265439, 126.672978750559],
+                {}
+            ).addTo(map_38571a6026618f45f463af3367fed4d8);
+        
+    
+            var icon_74fa056f24c0172ab72003363cbd4bc0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_74aa6e26e6e5cb82ed6550d0273b7ab1.setIcon(icon_74fa056f24c0172ab72003363cbd4bc0);
+        
+    
+        var popup_86fcb2aa7bd4df645ccf7c24a9378781 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_2ac30d1559893acedc5f421c7f1c5e78 = $(`<div id="html_2ac30d1559893acedc5f421c7f1c5e78" style="width: 100.0%; height: 100.0%;">         <div style="max-width: 150px; font-size: 10px;">             <strong>충남</strong><br>             사고: 8164건<br>             사망: 230명<br>             부상: 11964명         </div>         </div>`)[0];
+                popup_86fcb2aa7bd4df645ccf7c24a9378781.setContent(html_2ac30d1559893acedc5f421c7f1c5e78);
+            
+        
+
+        marker_74aa6e26e6e5cb82ed6550d0273b7ab1.bindPopup(popup_86fcb2aa7bd4df645ccf7c24a9378781)
+        ;
+
+        
+    
+    
+            var marker_2b4f8377e788f591c84ff780db02ae40 = L.marker(
+                [36.6353867908159, 127.491428436987],
+                {}
+            ).addTo(map_38571a6026618f45f463af3367fed4d8);
+        
+    
+            var icon_d89f8bf8136b8bc5d2624b9ac9ed55b8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_2b4f8377e788f591c84ff780db02ae40.setIcon(icon_d89f8bf8136b8bc5d2624b9ac9ed55b8);
+        
+    
+        var popup_07f26374e895fe5a66d1020364951586 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_e258763d87548c6d4325bb09d6ecb81d = $(`<div id="html_e258763d87548c6d4325bb09d6ecb81d" style="width: 100.0%; height: 100.0%;">         <div style="max-width: 150px; font-size: 10px;">             <strong>충북</strong><br>             사고: 7644건<br>             사망: 149명<br>             부상: 11354명         </div>         </div>`)[0];
+                popup_07f26374e895fe5a66d1020364951586.setContent(html_e258763d87548c6d4325bb09d6ecb81d);
+            
+        
+
+        marker_2b4f8377e788f591c84ff780db02ae40.bindPopup(popup_07f26374e895fe5a66d1020364951586)
+        ;
+
+        
+    
+</script>
+</html>

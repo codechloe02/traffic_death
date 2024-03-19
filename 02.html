@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ITS(지능형 교통체계) 시각화</title>
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/black/easyui.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/color.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            box-sizing: border-box;
+            background-color: #030e12; /* 변경된 배경색 */
+        }
+
+        .window-frame {
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 73px);
+            background: #ffffff; /* 밝은 배경색으로 변경 */
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            overflow: hidden;
+        }
+
+        .content-area {
+            display: flex;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+
+        .toolbar {
+            width: 100%;
+            height: 30px;
+            background: #0a192f; /* 도구 막대 배경색 변경 */
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .toolbar div {
+            width: 15px;
+            height: 15px;
+            background: rgb(252, 182, 182);
+            border-radius: 100%;
+            margin-right: 12px;
+        }
+
+        .header {
+            background-color: #112d4e; /* 헤더 배경색 변경 */
+            text-align: center;
+            padding: 20px;
+            font-size: 25px;
+            color: #dbe2ef; /* 글자색 변경 */
+        }
+
+        .sidebar {
+            width: 15%;
+            background: #3f72af; /* 사이드바 배경색 변경 */
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            color: #dbe2ef; /* 사이드바 텍스트 색상 변경 */
+        }
+
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            background-color: #f9f7f7; /* 메인 컨텐츠 배경색 변경 */
+            color: #112d4e; /* 메인 컨텐츠 텍스트 색상 변경 */
+        }
+
+        .btn {
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 10px;
+            color: #030e12; /* 버튼 텍스트 색상 변경 */
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* 버튼 배경색을 아이콘 색상과 일치시키기 */
+        .btn:hover {
+            background-color: #3f72af; /* 호버 시 배경색 변경 */
+            color: #dbe2ef; /* 호버 시 텍스트 색상 변경 */
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        ITS(지능형 교통체계) 시각화
+    </div>
+    <div class="window-frame">
+        <div class="toolbar">
+            <!-- 도구 막대 내용 -->
+        </div>
+        <div class="content-area">
+            <div class="sidebar">
+                <!-- 사이드바 버튼들 -->
+            </div>
+            <div class="main-content" id="mainContent">
+                <h1>2022년 교통사고 분석</h1>
+                <img src="data:image/png;base64,여기에 이미지의 Base64 인코딩 값을 넣으세요" alt="ITS Visualization">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

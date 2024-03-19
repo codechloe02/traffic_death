@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ITS(지능형 교통체계) 시각화</title>
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/black/easyui.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/color.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        * {
+            box-sizing: border-box;
+            /* 모든 요소에 대해 box-sizing 적용 */
+        }
+
+        .window-frame {
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 73px);
+            background: rgb(255, 255, 255);
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            overflow: hidden;
+
+        }
+
+        .content-area {
+            display: flex;
+            flex-grow: 1;
+            overflow-y: auto;
+            /* 내용이 많을 경우 스크롤바 생성 */
+        }
+
+        .toolbar {
+            width: 100%;
+            height: 30px;
+            background: #808080;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .toolbar div {
+            width: 15px;
+            height: 15px;
+            background: rgb(243, 202, 68);
+            border-radius: 100%;
+            margin-right: 12px;
+        }
+
+        .header {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            font-size: 25px;
+            color: rgb(0, 0, 0);
+            position: relative;
+            /* 헤더 내 요소의 위치를 조정하기 위해 relative로 설정 */
+        }
+
+        .header img {
+            height: 50px;
+            /* 헤더 높이에 맞춰 아이콘 크기 조절 */
+            width: auto;
+            /* 이미지의 원래 비율을 유지 */
+            position: absolute;
+            /* 헤더 내에서 절대 위치 사용 */
+            top: 50%;
+            /* 상단에서 50% 위치에 */
+            transform: translateY(-50%);
+            /* Y축 기준으로 -50% 이동하여 중앙 정렬 */
+            margin-left: -60px;
+        }
+
+        .sidebar {
+            flex-shrink: 0;
+            /* 사이드바 크기 고정 */
+            width: 12%;
+            /* 사이드바 너비 고정 */
+            overflow-y: auto;
+            /* 내용이 많아지면 스크롤 생성 */
+            background: #ffffff;
+            /* 배경색 설정 */
+            padding: 50px 20px; 
+            box-sizing: border-box;
+            /* 패딩과 테두리가 너비에 포함되도록 설정 */
+        }
+
+        .main-content {
+            flex-grow: 1;
+            /* 메인 콘텐츠가 남은 공간을 모두 사용하도록 설정 */
+            padding: 20px;
+            box-sizing: border-box;
+            /* 패딩과 테두리가 너비에 포함되도록 설정 */
+            overflow-y: auto;
+            /* 내용이 많을 경우 스크롤바 생성 */
+        }
+
+        .section-intro,
+        .section-visualization {
+            margin-bottom: 30px;
+            /* 여백 증가 */
+            padding: 30px;
+            /* 패딩 증가 */
+            background-color: #f8f8f8;
+            border-radius: 12px;
+            /* 둥근 모서리의 반경 증가 */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* 그림자 효과 조정 */
+            width: auto;
+            /* 너비 자동 조정 */
+            max-width: 100%;
+            /* 최대 너비 설정 */
+        }
+
+        .section-intro h2,
+        .section-visualization h2 {
+            font-size: 26px;
+            /* 제목 글자 크기 증가 */
+            color: #333;
+            margin-bottom: 15px;
+            /* 제목 아래 여백 증가 */
+        }
+
+        .section-intro p,
+        .section-visualization p {
+            font-size: 18px;
+            /* 본문 글자 크기 증가 */
+            color: #666;
+            line-height: 1.8;
+            /* 줄 간격 증가 */
+            text-align: justify;
+            /* 양쪽 정렬로 가독성 향상 */
+        }
+
+        .main-content {
+            font-family: 'Arial', sans-serif;
+            /* 폰트 변경, 원하는 폰트로 조정 가능 */
+            margin: 0 auto;
+            /* 중앙 정렬 */
+            padding: 20px;
+            /* 내부 여백 증가 */
+        }
+
+        .btn {
+            padding: 10px 20px;
+            /* 상하 패딩을 줄이고 좌우 패딩을 조절하여 꽉 찬 느낌을 줌 */
+            width: 100%;
+            /* 버튼 너비를 내용물에 맞게 조절 */
+            margin-bottom: 30px;
+            color: #000000;
+            /* 버튼 내 텍스트 색상 */
+            border: 2px solid transparent;
+            /* 윤곽선 추가 */
+            cursor: pointer;
+            border-radius: 8px;
+            /* 버튼 모서리 둥글게 */
+            transition: background-color 0.3s, border-color 0.3s, color 0.3s, opacity 0.3s;
+            /* 전환 효과 추가 */
+            font-weight: bold;
+            font-size: 18px;
+            /* 글자 크기 증가 */
+            display: inline-block;
+            /* 내용에 맞게 버튼 크기 조정 */
+        }
+
+        /* 버튼 배경색 및 윤곽선 색상 설정 */
+        .btn-1 {
+            background-color: #ffffff;
+            border-color: #696969;
+            /* 윤곽선 색상 설정 */
+        }
+
+        /* 마우스 오버 시 버튼 배경색 변경 */
+        .btn:hover {
+            opacity: 0.9;
+            /* 투명도 조정 */
+        }
+
+        /* 버튼 클릭 시 색상 반전 */
+        .btn.active,
+        .btn:active {
+            color: #ffffff;
+            /* 클릭 시 텍스트 색상을 흰색으로 변경 */
+            background-color: #000000;
+            /* 클릭 시 배경색을 검은색으로 변경 */
+            border-color: #000000;
+            /* 클릭 시 윤곽선 색상을 검은색으로 변경 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <img src="./icon2.png" alt="Icon">
+        시각화 프로젝트 - 팀이름: Planet [안재영, 박지은, 백진규, 손유승, 이정빈]
+    </div>
+    </div>
+    <div class="window-frame">
+        <div class="toolbar">
+            <div class="Red"></div>
+            <div class="Yellow"></div>
+            <div class="Green"></div>
+        </div>
+        <div class="content-area"> <!-- 새로운 div 추가 -->
+            <div class="sidebar">
+                <button class="btn btn-1" onclick="changeContent('content1', this)">전국시도별 자료</button>
+                <button class="btn btn-1" onclick="changeContent('content2', this)">전국 분기 교통사고</button>
+                <button class="btn btn-1" onclick="changeContent('content3', this)">교통사고 법규위반</button>
+                <button class="btn btn-1" onclick="changeContent('content4', this)">사망자 연령층</button>
+                <button class="btn btn-1" onclick="changeContent('content5', this)">전국 교통사고 사망비율</button>
+                <button class="btn btn-1" onclick="changeContent('content6', this)">전국 사고대비 사망률</button>
+                <button class="btn btn-1" onclick="changeContent('content7', this)">대구/전북 사망자수</button>
+                <button class="btn btn-1" onclick="changeContent('content8', this)">대구/전북 사고유형</button>
+                <button class="btn btn-1" onclick="changeContent('content9', this)">대구/전북 도로종류별</button>
+                <button class="btn btn-1" onclick="changeContent('content10', this)">대구/전북 도로형태별</button>
+            </div>
+            <div class="main-content" id="mainContent">
+                <h1> 2022년 교통사고 통계 시각화
+                </h1>
+                <section class="section-intro">
+                    <h2> 동기: 인간 생명의 소중함과 사회적 책임</h2>
+                    <p>현대 사회에서 교통사고는 단순히 개인의 불행을 넘어서 사회적 비용과 깊은 연관이 있습니다. 인간의 생명을 우선시하는 사회적 가치관 하에, 우리는 교통사고의 심각성을 인식하고,
+                        이를 줄이기 위한 적극적인 노력을 기울여야 합니다. 이러한 관점에서, 2022년 교통사고 통계의 분석과 시각화는 과학적 근거에 기반한 정책 개발과 공공의 안전 강화를 위한
+                        필수적인 첫걸음입니다.</p>
+                </section>
+
+                <section class="section-visualization">
+                    <h2>이유: 데이터 기반의 의사결정 강화</h2>
+                    <p>데이터 시각화는 복잡한 정보를 직관적으로 이해할 수 있게 하며, 이를 통해 정책 입안자, 연구자, 그리고 일반 대중이 보다 명확하고 근거 있는 결정을 내릴 수 있도록 합니다.
+                        특히, 교통사고 통계의 시각화는 교통 안전에 대한 문제 인식을 증가시키고, 예방 조치의 중요성을 강조하는 데 중요한 역할을 합니다. 이는 교통 사고를 줄이기 위한 전략적
+                        접근의 일환으로, 교통법규 준수, 안전한 도로 설계, 그리고 교육 및 인식 개선 프로그램의 중요성을 부각시킵니다.</p>
+                </section>
+                <section class="section-visualization">
+                    <h2>효과: 교통 안전 문화의 촉진</h2>
+                    <p>통계 시각화는 정보 전달의 한 형태로, 교통 안전에 대한 일반 대중의 인식을 변화시키고, 더 안전한 도로 환경을 조성하는 데 기여할 수 있습니다. 시각화된 데이터는 사람들에게
+                        더 강한 인상을 주며, 교통 사고의 실질적인 영향을 보여줌으로써 개인의 행동 변화를 유도할 수 있습니다. 따라서, 2022년 교통사고 통계의 시각화는 단순한 정보의 제공을
+                        넘어서, 보다 안전한 사회를 향한 긍정적인 변화를 이끄는 데 중요한 역할을 합니다.</p>
+                </section>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        function changeContent(content) {
+            var buttons = document.querySelectorAll('.btn');
+            buttons.forEach(function (btn) {
+                btn.classList.remove('active'); // 모든 버튼에서 'active' 클래스 제거
+            });
+
+            var displayText = '';
+            switch (content) {
+                case 'content1':
+                    displayText = '<iframe src="./Map.html" style="border:none;width:100%;height:100%"></iframe>';
+                    break;
+                case 'content2':
+                    displayText = '<iframe src="./2.전국 분기 교통사고.html" style="border:none;width:100%;height:100%"></iframe>';
+                    break;
+                case 'content3':
+                    displayText = '<iframe src="./3.교통사고 법규위반.html" style="border:none;width:100%;height:100%"></iframe>';
+                    break;
+                case 'content4':
+                    displayText = '<iframe src="./4.사망자 연령층.html" style="border:none;width:100%;height:100%"></iframe>';
+                    break;
+                case 'content5':
+                    displayText = '<iframe src="./5.전국 교통사고, 사망비율.html" style="border:none;width:100%;height:100%"></iframe>';
+                    break;
+                case 'content6':
+                    displayText = '<iframe src="./6.0전국 사고대비 사망률.html" style="border:none;width:100%;height:100%"></iframe>';
+                    break;
+                case 'content7':
+                    displayText = '<iframe src="./6.1.1대구전북 사망자수.html" style="border:none;width:100%;height:100%"></iframe>';
+                    break;
+                case 'content8':
+                    displayText = '<iframe src="./6.1.2대구전북 사고유형.html" style="border:none;width:100%;height:100%"></iframe>';
+                    break;
+                case 'content9':
+                    displayText = '<iframe src="./6.2대구전북 도로별.html" style="border:none;width:100%;height:100%"></iframe>';
+                    break;
+                case 'content10':
+                    displayText = '<iframe src="./6.3대구전북 도로형태별사고.html" style="border:none;width:100%;height:100%"></iframe>';
+                    break;
+                default:
+                    displayText = '<p>선택한 내용이 여기에 표시됩니다.</p>';
+            }
+            document.getElementById('mainContent').innerHTML = displayText;
+            event.target.classList.add('active');
+        }
+
+
+    </script>
+
+</body>
+
+</html>
